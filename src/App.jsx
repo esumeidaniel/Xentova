@@ -53,7 +53,7 @@ function App() {
 
   return (
     <AuthProvider>
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <Routes>
         {/* Onboarding */}
         <Route path="/" element={<Splash />} />
