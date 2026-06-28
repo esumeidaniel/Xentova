@@ -11,30 +11,65 @@
 
 /* ─── Left hero panel ────────────────────────────────────── */
 .auth-hero {
+  position: relative;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  gap: 0.9rem;
+  gap: 1rem;
   padding: clamp(2rem, 5vw, 4rem);
   border-right: 1px solid var(--line-accent);
   background:
+    radial-gradient(circle at 50% 42%, rgba(224, 173, 115, 0.22), transparent 24rem),
     linear-gradient(rgba(255,255,255,0.018) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255,255,255,0.018) 1px, transparent 1px);
   background-size: 56px 56px;
 }
 
-.auth-hero .auth-brand-mark svg {
-  width: 2.5rem;
-  height: 2.5rem;
-  fill: none;
-  stroke: var(--accent);
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 2.4;
+.auth-hero::before {
+  content: '';
+  position: absolute;
+  inset: 12%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(224, 173, 115, 0.18), transparent 65%);
+  filter: blur(1rem);
+  opacity: 0.9;
+  animation: authLogoGlow 5s ease-in-out infinite;
+}
+
+.auth-brand-mark {
+  position: relative;
+  z-index: 1;
+  width: min(72%, 34rem);
+  max-width: 34rem;
+  aspect-ratio: 1;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow:
+    0 2rem 6rem rgba(0, 0, 0, 0.45),
+    0 0 4rem rgba(224, 173, 115, 0.15);
+  animation: authLogoFloat 6s ease-in-out infinite;
+}
+
+.auth-brand-mark img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.auth-brand-mark--compact {
+  width: 3.5rem;
+  max-width: none;
+  border-radius: 0.9rem;
+  box-shadow: 0 0.75rem 2rem rgba(224, 173, 115, 0.18);
+  animation: none;
 }
 
 .auth-logo-text {
+  position: relative;
+  z-index: 1;
   font-size: 1.3rem;
   font-weight: 900;
   letter-spacing: 0.14em;
@@ -42,12 +77,16 @@
 }
 
 .auth-tagline {
+  position: relative;
+  z-index: 1;
   font-size: 0.85rem;
   color: rgba(247, 243, 236, 0.5);
   letter-spacing: 0.05em;
 }
 
 .auth-hero-metrics {
+  position: relative;
+  z-index: 1;
   display: flex;
   gap: 0.6rem;
   margin-top: 1rem;
@@ -80,16 +119,6 @@
   align-items: center;
   gap: 0.5rem;
   margin-bottom: 2rem;
-}
-
-.auth-mobile-brand .auth-brand-mark svg {
-  width: 1.75rem;
-  height: 1.75rem;
-  fill: none;
-  stroke: var(--accent);
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 2.4;
 }
 
 /* ─── Form header ─────────────────────────────────────────── */
@@ -411,9 +440,42 @@
     display: flex;
   }
 
+  .auth-mobile-brand .auth-brand-mark {
+    flex: 0 0 auto;
+  }
+
   .signin-panel,
   .signup-panel {
     justify-content: flex-start;
     padding-top: 3rem;
+  }
+}
+
+@keyframes authLogoFloat {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-0.65rem) scale(1.015);
+  }
+}
+
+@keyframes authLogoGlow {
+  0%, 100% {
+    transform: scale(0.96);
+    opacity: 0.7;
+  }
+
+  50% {
+    transform: scale(1.04);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .auth-brand-mark,
+  .auth-hero::before {
+    animation: none;
   }
 }

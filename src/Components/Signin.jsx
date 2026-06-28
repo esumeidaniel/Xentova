@@ -32,16 +32,11 @@ const AppleIcon = () => (
   </svg>
 )
 
-const BrandMark = () => (
-  <div className="auth-brand-mark" aria-hidden="true">
-    <svg viewBox="0 0 48 48">
-      <path d="M12 13.5 36 37.5" />
-      <path d="M36 13.5 12 37.5" />
-      <path d="M16 8.5a18 18 0 0 1 16 0" />
-      <path d="M16 42.5a18 18 0 0 0 16 0" />
-      <path d="M24 5.5v7" />
-      <path d="M24 35.5v7" />
-    </svg>
+const logoUrl = `${import.meta.env.BASE_URL}xentova-logo.png`
+
+const BrandMark = ({ compact = false }) => (
+  <div className={compact ? 'auth-brand-mark auth-brand-mark--compact' : 'auth-brand-mark'} aria-hidden="true">
+    <img src={logoUrl} alt="" />
   </div>
 )
 
@@ -116,7 +111,7 @@ const Signin = () => {
 
       <div className="signin-panel">
         <div className="auth-mobile-brand">
-          <BrandMark />
+          <BrandMark compact />
           <p className="auth-logo-text">XENTOVA</p>
         </div>
 
