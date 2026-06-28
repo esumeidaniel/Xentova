@@ -1,0 +1,4 @@
+/* App-level layout reset — all page shells handle their own layout */
+#root {
+  isolation: isolate;
+}

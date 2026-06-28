@@ -1,0 +1,31 @@
+.transaction-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--panel);
+}
+
+.transaction-card strong {
+  display: block;
+  color: var(--text);
+  font-size: 0.86rem;
+}
+
+.transaction-card p,
+.transaction-card em {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-style: normal;
+}
+
+.transaction-card .positive {
+  color: var(--accent);
+}
+
+.transaction-card .negative {
+  color: var(--sell);
+}

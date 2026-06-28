@@ -1,0 +1,5 @@
+/* Signup reuses all .auth-* classes from Signin.css */
+/* Only override anything specific to signup layout if needed */
+.auth-app--signup .signup-panel {
+  max-height: 100dvh;
+}

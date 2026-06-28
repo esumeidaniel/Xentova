@@ -1,0 +1,48 @@
+.buttom-navbar {
+  display: none;
+}
+
+.buttom-navbar a {
+  color: var(--text-muted);
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.7rem;
+}
+
+.buttom-navbar svg {
+  width: 1.3rem;
+  height: 1.3rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2.2;
+}
+
+@media (max-width: 560px) {
+  .buttom-navbar {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    border-top: 1px solid var(--line);
+    padding: 0.7rem 0.35rem calc(0.7rem + env(safe-area-inset-bottom));
+    background: rgba(3, 4, 8, 0.96);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  .buttom-navbar a {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.22rem;
+  }
+
+  .buttom-navbar .active {
+    color: var(--accent);
+  }
+}

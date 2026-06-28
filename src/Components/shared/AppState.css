@@ -1,0 +1,59 @@
+.app-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  min-height: 12rem;
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-card);
+  text-align: center;
+}
+
+.app-state > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 0.8rem;
+  background: var(--accent-dim);
+  color: var(--accent);
+  font-weight: 900;
+}
+
+.app-state--loading > span {
+  border: 3px solid rgba(224, 173, 115, 0.2);
+  border-top-color: var(--accent);
+  animation: app-state-spin 0.8s linear infinite;
+}
+
+.app-state--error > span {
+  background: var(--sell-dim);
+  color: var(--sell);
+}
+
+.app-state--success > span {
+  background: rgba(69, 199, 168, 0.16);
+  color: #45c7a8;
+}
+
+.app-state strong {
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.app-state p {
+  max-width: 24rem;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+@keyframes app-state-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

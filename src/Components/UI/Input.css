@@ -1,0 +1,31 @@
+.ui-input {
+  display: grid;
+  gap: 0.4rem;
+  color: rgba(247, 243, 236, 0.72);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.ui-input input {
+  width: 100%;
+  padding: 0.75rem 0.85rem;
+  border: 1px solid var(--line);
+  border-radius: 0.65rem;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  outline: none;
+}
+
+.ui-input em,
+.ui-input small {
+  font-style: normal;
+  font-size: 0.72rem;
+}
+
+.ui-input em {
+  color: var(--sell);
+}
+
+.ui-input small {
+  color: var(--text-muted);
+}

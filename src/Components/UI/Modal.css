@@ -1,0 +1,38 @@
+.ui-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.62);
+}
+
+.ui-modal {
+  width: min(100%, 28rem);
+  padding: 1.25rem;
+  border: 1px solid var(--line-accent);
+  border-radius: var(--radius);
+  background: #070910;
+}
+
+.ui-modal header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.ui-modal h2 {
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.ui-modal button {
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  background: var(--panel);
+  color: var(--text);
+  cursor: pointer;
+}

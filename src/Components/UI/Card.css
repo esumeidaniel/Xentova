@@ -1,0 +1,19 @@
+.ui-card {
+  padding: 1.2rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-card);
+}
+
+.ui-card > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.85rem;
+}
+
+.ui-card h2 {
+  color: var(--text);
+  font-size: 0.95rem;
+}

@@ -1,0 +1,43 @@
+.crypto-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--panel);
+}
+
+.crypto-card > span {
+  display: grid;
+  place-items: center;
+  width: 2.35rem;
+  height: 2.35rem;
+  border-radius: 0.7rem;
+  background: var(--accent-dim);
+  color: var(--accent);
+  font-weight: 900;
+}
+
+.crypto-card strong {
+  display: block;
+  color: var(--text);
+  font-size: 0.86rem;
+}
+
+.crypto-card p,
+.crypto-card em {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  font-style: normal;
+}
+
+.crypto-card em {
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.crypto-card em.negative {
+  color: var(--sell);
+}

@@ -1,0 +1,31 @@
+.shared-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.5rem 2rem 1rem;
+  border-bottom: 1px solid var(--line);
+  background: rgba(7, 9, 16, 0.9);
+}
+
+.shared-header p {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+}
+
+.shared-header h1 {
+  color: var(--text);
+  font-size: 1.1rem;
+}
+
+.shared-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+@media (max-width: 560px) {
+  .shared-header {
+    padding-inline: 1rem;
+  }
+}

@@ -1,0 +1,82 @@
+.page-shell {
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  padding: 1.25rem;
+  background:
+    radial-gradient(circle at 16% 12%, rgba(224, 173, 115, 0.14), transparent 26rem),
+    #030408;
+}
+
+.page-shell-app {
+  display: grid;
+  width: min(100%, 1240px);
+  min-height: calc(100dvh - 2.5rem);
+  height: calc(100dvh - 2.5rem);
+  grid-template-columns: 15rem minmax(0, 1fr);
+  border: 1px solid var(--line-accent);
+  border-radius: 1.5rem;
+  overflow: hidden;
+  background: linear-gradient(135deg, #070910 0%, #050710 56%, #030408 100%);
+}
+
+.page-shell-content {
+  min-height: 0;
+  overflow-y: auto;
+}
+
+.page-shell-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.5rem 2rem 1rem;
+  border-bottom: 1px solid var(--line);
+  background: rgba(7, 9, 16, 0.9);
+  backdrop-filter: blur(12px);
+}
+
+.page-shell-header p {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+}
+
+.page-shell-header h1 {
+  color: var(--text);
+  font-size: 1.1rem;
+}
+
+.page-shell-actions {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.page-shell-body {
+  padding: 1.5rem 2rem 6rem;
+}
+
+@media (max-width: 960px) {
+  .page-shell {
+    padding: 0;
+  }
+
+  .page-shell-app {
+    grid-template-columns: 1fr;
+    min-height: 100dvh;
+    height: 100dvh;
+    border: none;
+    border-radius: 0;
+  }
+
+  .page-shell-app .app-sidebar {
+    display: none;
+  }
+
+  .page-shell-header,
+  .page-shell-body {
+    padding-inline: 1rem;
+  }
+}

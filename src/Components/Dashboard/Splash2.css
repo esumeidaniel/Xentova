@@ -1,0 +1,211 @@
+.splash2-shell {
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  background:
+    radial-gradient(circle at 16% 10%, rgba(224, 173, 115, 0.16), transparent 26rem),
+    radial-gradient(circle at 84% 80%, rgba(148, 82, 38, 0.14), transparent 30rem),
+    #030408;
+}
+
+.splash2-screen {
+  --accent: #e0ad73;
+  --line: rgba(224, 173, 115, 0.18);
+  position: relative;
+  display: grid;
+  width: min(100%, 1200px);
+  min-height: min(calc(100dvh - 2.5rem), 820px);
+  grid-template-columns: minmax(20rem, 0.95fr) minmax(0, 1fr);
+  gap: clamp(1.25rem, 3vw, 2.25rem);
+  padding: clamp(1.35rem, 3vw, 2.5rem);
+  border: 1px solid var(--line);
+  border-radius: 1.5rem;
+  overflow: hidden;
+  background:
+    linear-gradient(rgba(255,255,255,0.022) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.022) 1px, transparent 1px),
+    radial-gradient(circle at 70% 25%, rgba(224, 173, 115, 0.1), transparent 22rem),
+    linear-gradient(135deg, #080a10 0%, #05070c 55%, #030408 100%);
+  background-size: 48px 48px, 48px 48px, auto, auto;
+  box-shadow: 0 32px 100px rgba(0, 0, 0, 0.5);
+}
+
+.splash2-screen::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  pointer-events: none;
+  z-index: 0;
+  background: linear-gradient(90deg, rgba(3, 5, 8, 0.3), transparent 40%, transparent 76%, rgba(3, 5, 8, 0.4));
+}
+
+.splash2-screen > * {
+  position: relative;
+  z-index: 1;
+}
+
+.splash2-screen > a {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.75rem;
+  z-index: 2;
+  color: rgba(247, 243, 236, 0.5);
+  font-size: 0.82rem;
+  font-weight: 600;
+  transition: color 0.15s;
+}
+
+.splash2-screen > a:hover {
+  color: var(--accent);
+}
+
+/* Trader stack */
+.trader-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-self: center;
+}
+
+.trader-card {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  padding: 0.9rem 1.1rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.trader-card:first-child {
+  border-color: rgba(224, 173, 115, 0.25);
+  background: rgba(224, 173, 115, 0.06);
+}
+
+.trader-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  font-size: 0.7rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.trader-avatar--cyan { background: rgba(86, 214, 196, 0.2); color: #56d4c4; }
+.trader-avatar--orange { background: rgba(241, 121, 112, 0.2); color: #f17970; }
+.trader-avatar--violet { background: rgba(148, 82, 220, 0.2); color: #9452dc; }
+
+.trader-card > div {
+  flex: 1;
+  min-width: 0;
+}
+
+.trader-card strong {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #f7f3ec;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.trader-card p {
+  font-size: 0.75rem;
+  color: rgba(247, 243, 236, 0.5);
+  margin-top: 0.1rem;
+}
+
+.trader-card em {
+  font-style: normal;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+/* Copy */
+.splash2-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.7rem;
+  padding-bottom: 0.5rem;
+}
+
+.splash2-copy > p:first-child {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.splash2-copy h1 {
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-weight: 800;
+  color: #f7f3ec;
+  line-height: 1.2;
+}
+
+.splash2-copy h1 span { color: var(--accent); }
+
+.splash2-copy > p:last-child {
+  font-size: 0.9rem;
+  color: rgba(247, 243, 236, 0.56);
+  line-height: 1.65;
+  max-width: 38ch;
+}
+
+/* Footer */
+.splash2-footer {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.splash2-dots {
+  display: flex;
+  gap: 0.45rem;
+}
+
+.splash2-dots span {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: rgba(247, 243, 236, 0.2);
+  transition: background 0.2s, width 0.2s;
+}
+
+.splash2-dots span.active {
+  width: 1.4rem;
+  border-radius: 1rem;
+  background: var(--accent);
+}
+
+.splash2-footer > a:last-child {
+  padding: 0.65rem 1.5rem;
+  border-radius: 0.6rem;
+  background: var(--accent);
+  color: #0a0600;
+  font-weight: 700;
+  font-size: 0.875rem;
+  transition: opacity 0.15s;
+}
+
+.splash2-footer > a:last-child:hover {
+  opacity: 0.85;
+}
+
+@media (max-width: 600px) {
+  .splash2-screen {
+    grid-template-columns: 1fr;
+  }
+  .splash2-footer { grid-column: 1; }
+}

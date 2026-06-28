@@ -1,0 +1,295 @@
+.more-shell {
+  min-height: 100dvh;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  padding: 1.25rem;
+  background:
+    radial-gradient(circle at 16% 12%, rgba(224, 173, 115, 0.14), transparent 26rem),
+    radial-gradient(circle at 84% 82%, rgba(176, 104, 46, 0.1), transparent 28rem),
+    #030408;
+}
+
+.more-app {
+  position: relative;
+  display: grid;
+  width: min(100%, 1240px);
+  min-height: calc(100dvh - 2.5rem);
+  height: calc(100dvh - 2.5rem);
+  grid-template-columns: 15rem minmax(0, 1fr);
+  border: 1px solid var(--line-accent);
+  border-radius: 1.5rem;
+  overflow: hidden;
+  background:
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(135deg, #070910 0%, #050710 56%, #030408 100%);
+  background-size: 48px 48px, 48px 48px, auto;
+  box-shadow: 0 32px 100px rgba(0, 0, 0, 0.5);
+}
+
+.more-content {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  min-height: 0;
+}
+
+.more-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 2rem 1rem;
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(7, 9, 16, 0.9);
+  backdrop-filter: blur(12px);
+}
+
+.more-header > div:first-child p {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 0.15rem;
+}
+
+.more-header h1 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.more-profile {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.more-profile > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: var(--accent-dim);
+  border: 1px solid var(--line-accent);
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.more-profile strong {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.more-profile p {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+/* Grid */
+.more-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 18rem;
+  gap: 1.25rem;
+  padding: 1.5rem 2rem;
+  align-content: start;
+}
+
+.more-card {
+  padding: 1.25rem 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--bg-card);
+}
+
+.more-card h2 {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.75rem;
+}
+
+.more-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+/* Row items */
+.more-row {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+  padding: 0.875rem;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  transition: background 0.15s;
+  text-decoration: none;
+  color: inherit;
+}
+
+.more-row:hover {
+  background: var(--panel);
+}
+
+.more-item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 0.55rem;
+  flex-shrink: 0;
+}
+
+.more-item-icon svg {
+  width: 1rem;
+  height: 1rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
+.more-item-icon--green { background: var(--accent-dim); color: var(--accent); }
+.more-item-icon--blue { background: rgba(124, 156, 255, 0.18); color: #7c9cff; }
+.more-item-icon--purple { background: rgba(160, 83, 244, 0.18); color: #a053f4; }
+.more-item-icon--gold { background: rgba(224, 173, 115, 0.18); color: var(--accent); }
+.more-item-icon--gray { background: rgba(255, 255, 255, 0.07); color: var(--text-muted); }
+.more-item-icon--sell { background: var(--sell-dim); color: var(--sell); }
+
+.more-row strong {
+  flex: 1;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text);
+  display: block;
+}
+
+.more-row em {
+  font-style: normal;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.18rem 0.55rem;
+  border-radius: 1rem;
+  background: rgba(124, 156, 255, 0.14);
+  color: #7c9cff;
+}
+
+.row-arrow {
+  font-size: 1.1rem;
+  color: var(--text-dim);
+  line-height: 1;
+}
+
+/* Summary sidebar */
+.more-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  grid-row: 1 / 3;
+}
+
+.more-summary article {
+  padding: 1.1rem 1.25rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--bg-card);
+}
+
+.more-summary p {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-bottom: 0.3rem;
+}
+
+.more-summary strong {
+  display: block;
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.more-summary span {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: 0.2rem;
+}
+
+.logout-button {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.875rem 1.25rem;
+  border: 1px solid rgba(241, 121, 112, 0.25);
+  border-radius: var(--radius-sm);
+  background: rgba(241, 121, 112, 0.06);
+  color: var(--sell);
+  font-size: 0.875rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.15s;
+  text-decoration: none;
+  margin-top: 0.5rem;
+}
+
+.logout-button:hover {
+  background: rgba(241, 121, 112, 0.14);
+  border-color: rgba(241, 121, 112, 0.5);
+}
+
+.logout-button > span {
+  display: flex;
+  align-items: center;
+}
+
+.logout-button svg {
+  width: 1rem;
+  height: 1rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .more-grid {
+    grid-template-columns: 1fr;
+  }
+  .more-summary {
+    grid-row: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .more-summary article { flex: 1; min-width: 8rem; }
+}
+
+@media (max-width: 560px) {
+  .more-shell { padding: 0; }
+  .more-app {
+    grid-template-columns: 1fr;
+    border-radius: 0;
+    border: none;
+    min-height: 100dvh;
+    height: 100dvh;
+  }
+  .more-grid { padding: 1rem 1.25rem 5rem; gap: 1rem; }
+  .more-header { flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+}
