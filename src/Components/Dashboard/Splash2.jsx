@@ -12,10 +12,6 @@ function Splash2() {
   return (
     <main className="splash2-shell">
       <section className="splash2-screen" aria-label="Copy trading onboarding">
-        <div className="splash2-status">
-          <span>9:41</span>
-          <span>100%</span>
-        </div>
         <Link to="/signup">Skip</Link>
 
         <div className="trader-stack">

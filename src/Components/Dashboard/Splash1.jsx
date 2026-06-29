@@ -18,10 +18,6 @@ function Splash1() {
   return (
     <main className="splash1-shell">
       <section className="splash1-screen" aria-label="Portfolio tracking onboarding">
-        <div className="splash1-status">
-          <span>9:41</span>
-          <span>100%</span>
-        </div>
         <Link to="/signup">Skip</Link>
 
         <PortfolioPreview />

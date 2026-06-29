@@ -11,10 +11,6 @@ function Splash3() {
   return (
     <main className="splash3-shell">
       <section className="splash3-screen" aria-label="Live signals onboarding">
-        <div className="splash3-status">
-          <span>9:41</span>
-          <span>100%</span>
-        </div>
         <Link to="/signup">Skip</Link>
 
         <div className="signal-preview-stack">

@@ -19,11 +19,6 @@ function Splash() {
   return (
     <main className="splash-shell">
       <section className="splash-screen splash-screen--intro" aria-label="Xentova welcome">
-        <div className="splash-status">
-          <span>9:41</span>
-          <span>100%</span>
-        </div>
-
         <div className="splash-intro-content">
           <div className="splash-logo-card">
             <BrandMark />
