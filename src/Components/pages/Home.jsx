@@ -68,6 +68,8 @@ const actions = [
   { label: 'Deposit', icon: <ArrowUpIcon />, to: '/deposit' },
   { label: 'Withdraw', icon: <ArrowDownIcon />, to: '/withdraw' },
   { label: 'Transfer', icon: <TransferIcon />, to: '/withdraw' },
+  { label: 'Buy Crypto', icon: <ArrowUpIcon />, to: '/buy-crypto' },
+  { label: 'Trade', icon: <TransferIcon />, to: '/trades' },
   { label: 'History', icon: <FileIcon />, to: '/history' },
 ]
 
@@ -109,6 +111,7 @@ function Home() {
             <div>
               <p>{getGreeting()}</p>
               <h1>John Doe</h1>
+              <span className="home-status-pill">Verified account · KYC approved · Demo UI</span>
             </div>
             <div className="home-top-actions">
               <Link className="icon-shell" to="/notifications" aria-label="Notifications">
@@ -222,6 +225,11 @@ function Home() {
                   </article>
                 ))}
               </div>
+            </section>
+
+            <section className="home-risk-card">
+              <strong>Preview only</strong>
+              <p>Xentova is currently a frontend demo. Deposits, withdrawals, signals, and trades require backend, wallet, compliance, and API integration before they can be used with real funds.</p>
             </section>
           </div>
           )}

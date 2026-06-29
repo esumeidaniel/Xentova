@@ -37,6 +37,7 @@ function Trade() {
                 <input type="text" defaultValue="$1,000" />
               </label>
               <Link className="trade-submit" to="/order-book">Preview Order</Link>
+              <p className="trade-demo-note">Demo UI: trading execution requires backend/API integration.</p>
             </section>
 
             <section className="trade-list-card">

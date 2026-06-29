@@ -261,6 +261,30 @@
   font-weight: 900;
 }
 
+.advanced-warning {
+  padding: 1rem 1.15rem;
+  border: 1px solid rgba(224, 173, 115, 0.24);
+  border-radius: var(--radius-sm);
+  background:
+    linear-gradient(135deg, rgba(224, 173, 115, 0.12), rgba(241, 121, 112, 0.06)),
+    var(--bg-card);
+}
+
+.advanced-warning strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: var(--accent);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.advanced-warning p {
+  color: var(--text-muted);
+  font-size: 0.84rem;
+  line-height: 1.6;
+}
+
 .advanced-form {
   display: grid;
   gap: 0.9rem;

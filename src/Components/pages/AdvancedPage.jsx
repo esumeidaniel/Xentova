@@ -14,6 +14,8 @@ const icons = {
   rate: '*',
   kyc: 'OK',
   alert: '!',
+  bot: 'AI',
+  security: 'SH',
   learn: 'L',
   news: 'N',
   api: '{}',

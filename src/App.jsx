@@ -41,6 +41,7 @@ import Subscription from './Components/pages/Subscription.jsx'
 import ConnectWallet from './Components/pages/ConnectWallet.jsx'
 import CopyTrading from './Components/pages/CopyTrading.jsx'
 import Performance from './Components/pages/Performance.jsx'
+import DemoInfoPage from './Components/pages/DemoInfoPage.jsx'
 
 import Profile from './Components/Setting/Profile.jsx'
 import Security from './Components/Setting/Security.jsx'
@@ -98,11 +99,19 @@ function App() {
         <Route path="/connect-wallet" element={protect(<ConnectWallet />)} />
         <Route path="/copy-trading" element={protect(<CopyTrading />)} />
         <Route path="/performance" element={protect(<Performance />)} />
+        <Route path="/buy-crypto" element={protect(<DemoInfoPage type="buyCrypto" />)} />
+        <Route path="/wallet" element={protect(<DemoInfoPage type="wallet" />)} />
+        <Route path="/funding" element={<Navigate to="/wallet" replace />} />
+        <Route path="/trading-bot" element={protect(<DemoInfoPage type="bot" />)} />
 
         {/* Settings */}
         <Route path="/profile" element={protect(<Profile />)} />
         <Route path="/security" element={protect(<Security />)} />
         <Route path="/faq" element={protect(<FAQ />)} />
+        <Route path="/risk-disclosure" element={<DemoInfoPage type="risk" />} />
+        <Route path="/terms" element={<DemoInfoPage type="terms" />} />
+        <Route path="/privacy" element={<DemoInfoPage type="privacy" />} />
+        <Route path="/about" element={<DemoInfoPage type="about" />} />
 
         {/* Catch-all */}
         <Route path="*" element={<Navigate to="/" replace />} />

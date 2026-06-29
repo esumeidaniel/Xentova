@@ -26,6 +26,14 @@ export const SideNavIcon = ({ type }) => {
         <path d="M4 8h16v11H4z" />
       </>
     ),
+    markets: (
+      <>
+        <path d="M4 18V8" />
+        <path d="M10 18V5" />
+        <path d="M16 18v-7" />
+        <path d="M22 18H2" />
+      </>
+    ),
     trades: <path d="M4 13h4l2-6 4 12 2-6h4" />,
     signals: (
       <>
@@ -34,6 +42,12 @@ export const SideNavIcon = ({ type }) => {
         <path d="M19 12h3" />
         <path d="M19 7a7 7 0 0 0 0 10" />
         <circle cx="12" cy="12" r="2" />
+      </>
+    ),
+    copy: (
+      <>
+        <path d="M8 8h10v10H8z" />
+        <path d="M6 16H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
       </>
     ),
     more: (

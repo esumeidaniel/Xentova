@@ -3,11 +3,13 @@ import { BrandMark, SideNavIcon } from './NavIcon.jsx'
 import './Sidebar.css'
 
 const navItems = [
-  { label: 'Home', to: '/home', icon: 'home', activePaths: ['/home', '/notifications', '/deposit', '/withdraw', '/history', '/receipt', '/price-alerts', '/news'] },
+  { label: 'Home', to: '/home', icon: 'home', activePaths: ['/home', '/notifications', '/deposit', '/withdraw', '/history', '/receipt', '/buy-crypto', '/wallet', '/funding'] },
+  { label: 'Markets', to: '/markets', icon: 'markets', activePaths: ['/markets', '/price-alerts'] },
+  { label: 'Trade', to: '/trades', icon: 'trades', activePaths: ['/trades', '/order-book'] },
   { label: 'Portfolio', to: '/portfolio', icon: 'portfolio', activePaths: ['/portfolio', '/performance'] },
-  { label: 'Trades', to: '/trades', icon: 'trades', activePaths: ['/trades', '/leaderboard', '/markets', '/order-book', '/copy-trading', '/trader-profile'] },
   { label: 'Signals', to: '/signals', icon: 'signals' },
-  { label: 'More', to: '/more', icon: 'more', activePaths: ['/more', '/profile', '/security', '/faq', '/api-management', '/payment-methods', '/settings', '/kyc', '/learn', '/support', '/subscription', '/connect-wallet', '/referral', '/rate-us'] },
+  { label: 'Copy Trading', to: '/copy-trading', icon: 'copy', activePaths: ['/copy-trading', '/trader-profile', '/leaderboard'] },
+  { label: 'More', to: '/more', icon: 'more', activePaths: ['/more', '/profile', '/security', '/faq', '/api-management', '/payment-methods', '/settings', '/kyc', '/learn', '/support', '/subscription', '/connect-wallet', '/referral', '/rate-us', '/trading-bot', '/risk-disclosure', '/terms', '/privacy', '/about', '/news'] },
 ]
 
 function Sidebar() {
