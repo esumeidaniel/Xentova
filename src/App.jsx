@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { AuthProvider } from './Components/shared/AuthContext.jsx'
 import ProtectedRoute from './Components/shared/ProtectedRoute.jsx'
 
@@ -54,7 +54,7 @@ function App() {
 
   return (
     <AuthProvider>
-      <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <HashRouter>
         <Routes>
         {/* Onboarding */}
         <Route path="/" element={<Splash />} />
@@ -116,7 +116,7 @@ function App() {
         {/* Catch-all */}
         <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </AuthProvider>
   )
 }
