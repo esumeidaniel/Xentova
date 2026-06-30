@@ -1,6 +1,6 @@
 import { NavLink, useLocation } from 'react-router-dom'
 import { SideNavIcon } from './shared/NavIcon.jsx'
-import './Buttom-navbar.css'
+import './BottomNavbar.css'
 
 const navItems = [
   { label: 'Home', to: '/home', icon: 'home', activePaths: ['/home', '/notifications', '/deposit', '/withdraw', '/history', '/receipt', '/buy-crypto', '/wallet', '/funding'] },
@@ -10,11 +10,11 @@ const navItems = [
   { label: 'More', to: '/more', icon: 'more', activePaths: ['/more', '/profile', '/security', '/faq', '/api-management', '/payment-methods', '/settings', '/kyc', '/learn', '/support', '/subscription', '/connect-wallet', '/referral', '/rate-us', '/trading-bot', '/risk-disclosure', '/terms', '/privacy', '/about', '/news'] },
 ]
 
-function ButtomNavbar() {
+function BottomNavbar() {
   const { pathname } = useLocation()
 
   return (
-    <nav className="buttom-navbar" aria-label="Mobile primary navigation">
+    <nav className="bottom-navbar" aria-label="Mobile primary navigation">
       {navItems.map((item) => (
         <NavLink
           className={({ isActive }) =>
@@ -31,4 +31,4 @@ function ButtomNavbar() {
   )
 }
 
-export default ButtomNavbar
+export default BottomNavbar

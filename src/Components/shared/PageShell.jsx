@@ -1,4 +1,4 @@
-import ButtomNavbar from '../Buttom-navbar.jsx'
+import BottomNavbar from '../BottomNavbar.jsx'
 import Sidebar from './Sidebar.jsx'
 import './PageShell.css'
 
@@ -20,7 +20,7 @@ function PageShell({ title, eyebrow, actions, children, className = '' }) {
           </div>
         </div>
       </section>
-      <ButtomNavbar />
+      <BottomNavbar />
     </main>
   )
 }

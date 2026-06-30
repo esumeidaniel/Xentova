@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import ButtomNavbar from '../Buttom-navbar.jsx'
+import BottomNavbar from '../BottomNavbar.jsx'
 import Sidebar from '../shared/Sidebar.jsx'
 import './Signal.css'
 
@@ -139,7 +139,7 @@ function Signals() {
 
       </section>
 
-      <ButtomNavbar />
+      <BottomNavbar />
     </main>
   )
 }

@@ -176,7 +176,6 @@ const VerifyOtp = () => {
           <div className="otp-row" onPaste={handlePaste}>
             {digits.map((digit, index) => (
               <input
-                // eslint-disable-next-line react/no-array-index-key
                 key={index}
                 ref={(el) => { inputsRef.current[index] = el }}
                 className={`otp-box ${digit ? 'filled' : ''}`}
@@ -217,7 +216,6 @@ const VerifyOtp = () => {
                 )
               }
               if (key.special) {
-                // eslint-disable-next-line react/no-array-index-key
                 return <span key={`spacer-${index}`} className="auth-key" style={{ background: 'transparent', border: 'none' }} aria-hidden="true" />
               }
               return (

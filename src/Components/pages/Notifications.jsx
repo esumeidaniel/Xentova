@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import ButtomNavbar from '../Buttom-navbar.jsx'
+import BottomNavbar from '../BottomNavbar.jsx'
 import Sidebar from '../shared/Sidebar.jsx'
 import { EmptyState } from '../shared/AppState.jsx'
 import './Notifications.css'
@@ -148,7 +148,7 @@ function Notifications() {
 
       </section>
 
-      <ButtomNavbar />
+      <BottomNavbar />
     </main>
   )
 }

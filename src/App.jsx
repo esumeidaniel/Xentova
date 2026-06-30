@@ -14,7 +14,7 @@ import VerifyOtp from './Components/VerifyOtp.jsx'
 import ResetPassword from './Components/ResetPassword.jsx'
 
 import Home from './Components/pages/Home.jsx'
-import Profolio from './Components/pages/Profolio.jsx'
+import Portfolio from './Components/pages/Portfolio.jsx'
 import Signals from './Components/pages/Signals.jsx'
 import Trade from './Components/pages/Trade.jsx'
 import More from './Components/pages/More.jsx'
@@ -71,7 +71,7 @@ function App() {
 
         {/* Main app */}
         <Route path="/home" element={protect(<Home />)} />
-        <Route path="/portfolio" element={protect(<Profolio />)} />
+        <Route path="/portfolio" element={protect(<Portfolio />)} />
         <Route path="/profolio" element={<Navigate to="/portfolio" replace />} />
         <Route path="/trades" element={protect(<Trade />)} />
         <Route path="/signals" element={protect(<Signals />)} />

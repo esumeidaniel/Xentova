@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
-import ButtomNavbar from '../Buttom-navbar.jsx'
+import BottomNavbar from '../BottomNavbar.jsx'
 import Sidebar from '../shared/Sidebar.jsx'
 import './Deposit.css'
 import './Withdraw.css'
@@ -210,7 +210,7 @@ function Withdraw() {
         </div>
       </section>
 
-      <ButtomNavbar />
+      <BottomNavbar />
     </main>
   )
 }

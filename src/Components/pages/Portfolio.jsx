@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
-import ButtomNavbar from '../Buttom-navbar.jsx'
+import BottomNavbar from '../BottomNavbar.jsx'
 import Sidebar from '../shared/Sidebar.jsx'
-import './Profolio.css'
+import './Portfolio.css'
 
 const holdings = [
   { name: 'Bitcoin', symbol: 'BTC', amount: '0.468 BTC', share: '45%', value: '$31,381', change: '+8.14%', tone: 'btc', token: 'B' },
@@ -42,7 +42,7 @@ function HoldingRow({ asset }) {
   )
 }
 
-function Profolio() {
+function Portfolio() {
   return (
     <main className="portfolio-shell">
       <section className="portfolio-app" aria-label="Xentova portfolio dashboard">
@@ -119,9 +119,9 @@ function Profolio() {
 
       </section>
 
-      <ButtomNavbar />
+      <BottomNavbar />
     </main>
   )
 }
 
-export default Profolio
+export default Portfolio

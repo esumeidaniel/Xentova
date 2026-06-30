@@ -1,15 +1,15 @@
-.buttom-navbar {
+.bottom-navbar {
   display: none;
 }
 
-.buttom-navbar a {
+.bottom-navbar a {
   color: var(--text-muted);
   font-weight: 600;
   text-decoration: none;
   font-size: 0.7rem;
 }
 
-.buttom-navbar svg {
+.bottom-navbar svg {
   width: 1.3rem;
   height: 1.3rem;
   fill: none;
@@ -20,7 +20,7 @@
 }
 
 @media (max-width: 560px) {
-  .buttom-navbar {
+  .bottom-navbar {
     position: fixed;
     right: 0;
     bottom: 0;
@@ -35,14 +35,14 @@
     -webkit-backdrop-filter: blur(20px);
   }
 
-  .buttom-navbar a {
+  .bottom-navbar a {
     display: flex;
     align-items: center;
     flex-direction: column;
     gap: 0.22rem;
   }
 
-  .buttom-navbar .active {
+  .bottom-navbar .active {
     color: var(--accent);
   }
 }

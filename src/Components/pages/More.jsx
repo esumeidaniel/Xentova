@@ -1,5 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom'
-import ButtomNavbar from '../Buttom-navbar.jsx'
+import BottomNavbar from '../BottomNavbar.jsx'
 import Sidebar from '../shared/Sidebar.jsx'
 import { useAuth } from '../shared/AuthContext.jsx'
 import './More.css'
@@ -184,7 +184,7 @@ function More() {
 
       </section>
 
-      <ButtomNavbar />
+      <BottomNavbar />
     </main>
   )
 }

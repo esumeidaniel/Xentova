@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import ButtomNavbar from '../Buttom-navbar.jsx'
+import BottomNavbar from '../BottomNavbar.jsx'
 import Sidebar from '../shared/Sidebar.jsx'
 import BackButton from '../shared/BackButton.jsx'
 import { ErrorState, LoadingState } from '../shared/AppState.jsx'
@@ -108,7 +108,7 @@ function AdvancedPage({ title, eyebrow, accent = 'More', hero, metrics = [], sec
         </div>
       </section>
 
-      <ButtomNavbar />
+      <BottomNavbar />
     </main>
   )
 }
