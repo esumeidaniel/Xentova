@@ -1,5 +1,5 @@
 import { createClient } from '@supabase/supabase-js'
-import { env, hasSupabaseConfig } from './env.js'
+import { env, hasSupabaseAdminConfig, hasSupabaseConfig } from './env.js'
 
 export const supabase = hasSupabaseConfig()
   ? createClient(env.supabaseUrl, env.supabaseAnonKey, {
@@ -10,7 +10,7 @@ export const supabase = hasSupabaseConfig()
     })
   : null
 
-export const supabaseAdmin = env.supabaseUrl && env.supabaseServiceRoleKey
+export const supabaseAdmin = hasSupabaseAdminConfig()
   ? createClient(env.supabaseUrl, env.supabaseServiceRoleKey, {
       auth: {
         persistSession: false,

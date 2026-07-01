@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import { hasSupabaseConfig } from '../config/env.js'
+import { env, hasSupabaseConfig } from '../config/env.js'
 import { ok } from '../utils/http.js'
 
 const router = Router()
@@ -11,6 +11,9 @@ router.get('/', (_request, response) => {
     framework: 'express',
     database: 'supabase',
     supabaseConfigured: hasSupabaseConfig(),
+    demoAuthEnabled: env.demoAuthEnabled,
+    liveMarketData: env.liveMarketData,
+    marketDataProvider: env.marketDataProvider,
   })
 })
 

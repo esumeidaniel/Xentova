@@ -1,7 +1,7 @@
 import cors from 'cors'
 import express from 'express'
 import morgan from 'morgan'
-import { env } from './config/env.js'
+import { env, frontendOrigins } from './config/env.js'
 import accountRoutes from './routes/account.js'
 import authRoutes from './routes/auth.js'
 import healthRoutes from './routes/health.js'
@@ -13,7 +13,7 @@ import { fail } from './utils/http.js'
 export const app = express()
 
 app.use(cors({
-  origin: env.frontendUrl,
+  origin: frontendOrigins(),
   credentials: true,
 }))
 app.use(express.json({ limit: '1mb' }))
