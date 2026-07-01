@@ -1,47 +1,24 @@
 import { useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
+import {
+  AuthBrandPanel,
+  AuthInput,
+  DemoNotice,
+  EyeIcon,
+  LockIcon,
+  MailIcon,
+  MobileBrandHeader,
+  SecurityNote,
+  SocialAuthButtons,
+  TrustBadges,
+} from './AuthShared.jsx'
 import { useAuth } from './shared/AuthContext.jsx'
 
 import './Signin.css'
 
-const MailIcon = () => (
-  <svg aria-hidden="true" viewBox="0 0 24 24">
-    <path d="M4.75 6.75h14.5v10.5H4.75z" />
-    <path d="m5.25 7.25 6.25 5.25a1.15 1.15 0 0 0 1.5 0l6.25-5.25" />
-  </svg>
-)
-
-const LockIcon = () => (
-  <svg aria-hidden="true" viewBox="0 0 24 24">
-    <path d="M7.5 10.25h9a1 1 0 0 1 1 1v6.25a1 1 0 0 1-1 1h-9a1 1 0 0 1-1-1v-6.25a1 1 0 0 1 1-1Z" />
-    <path d="M9 10.25V8a3 3 0 0 1 6 0v2.25" />
-  </svg>
-)
-
-const EyeIcon = () => (
-  <svg aria-hidden="true" viewBox="0 0 24 24">
-    <path d="M3.75 12s2.75-5 8.25-5 8.25 5 8.25 5-2.75 5-8.25 5-8.25-5-8.25-5Z" />
-    <circle cx="12" cy="12" r="2.25" />
-  </svg>
-)
-
-const AppleIcon = () => (
-  <svg aria-hidden="true" viewBox="0 0 24 24">
-    <path d="M16.8 12.4c0-2 1.6-3 1.7-3.1-1-.1-2.1.5-2.6.5-.6 0-1.4-.5-2.3-.5-1.8 0-3.5 1.5-3.5 4 0 1.2.4 2.5 1 3.5.5.9 1.2 1.9 2 1.9.8 0 1.1-.5 2.1-.5s1.3.5 2.1.5c.9 0 1.5-.9 2-1.8.6-.9.8-1.8.8-1.9-.1 0-2-.7-2.1-2.5Z" />
-    <path d="M15.4 7.6c.4-.5.7-1.2.6-1.9-.6 0-1.3.4-1.8.9-.4.5-.7 1.2-.6 1.8.7.1 1.4-.3 1.8-.8Z" />
-  </svg>
-)
-
-const logoUrl = `${import.meta.env.BASE_URL}xentova-logo.png`
-
-const BrandMark = ({ compact = false }) => (
-  <div className={compact ? 'auth-brand-mark auth-brand-mark--compact' : 'auth-brand-mark'} aria-hidden="true">
-    <img src={logoUrl} alt="" />
-  </div>
-)
-
 const Signin = () => {
   const [showPassword, setShowPassword] = useState(false)
+  const [rememberMe, setRememberMe] = useState(false)
   const [form, setForm] = useState({ email: '', password: '' })
   const [errors, setErrors] = useState({})
   const [status, setStatus] = useState('idle')
@@ -67,7 +44,7 @@ const Signin = () => {
     if (!form.password) {
       nextErrors.password = 'Password is required.'
     } else if (form.password.length < 6) {
-      nextErrors.password = 'Password must be at least 6 characters.'
+      nextErrors.password = 'Use at least 6 characters for this demo sign in.'
     }
 
     setErrors(nextErrors)
@@ -76,6 +53,7 @@ const Signin = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
+    setStatus('idle')
 
     if (!validate()) return
 
@@ -86,71 +64,77 @@ const Signin = () => {
         return
       }
 
-      login()
-      navigate(location.state?.from?.pathname || '/home', { replace: true })
-    }, 450)
+      setStatus('success')
+      window.setTimeout(() => {
+        login()
+        navigate(location.state?.from?.pathname || '/home', { replace: true })
+      }, 350)
+    }, 650)
   }
 
   const handleSocialLogin = () => {
-    login()
-    navigate('/home', { replace: true })
+    setStatus('loading')
+    window.setTimeout(() => {
+      login()
+      navigate('/home', { replace: true })
+    }, 450)
   }
+
+  const emailReady = form.email && !errors.email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)
+  const passwordReady = form.password.length >= 6 && !errors.password
 
   return (
     <section className="auth-app" aria-label="Xentova sign in">
-      <aside className="auth-hero" aria-label="Xentova brand">
-        <BrandMark />
-        <p className="auth-logo-text">XENTOVA</p>
-        <p className="auth-tagline">Crypto&nbsp;&nbsp;&bull;&nbsp;&nbsp;Invest&nbsp;&nbsp;&bull;&nbsp;&nbsp;Grow</p>
-        <div className="auth-hero-metrics" aria-hidden="true">
-          <span>Secure</span>
-          <span>Transparent</span>
-          <span>Trusted</span>
-        </div>
-      </aside>
+      <AuthBrandPanel />
 
-      <div className="signin-panel">
-        <div className="auth-mobile-brand">
-          <BrandMark compact />
-          <p className="auth-logo-text">XENTOVA</p>
-        </div>
+      <main className="signin-panel">
+        <div className="auth-form-shell">
+          <MobileBrandHeader />
 
-        <header className="auth-header">
-          <h1>Welcome Back!</h1>
-          <p>Sign in to continue to your account</p>
-        </header>
+          <header className="auth-header">
+            <p className="auth-kicker">Protected account access</p>
+            <h1>Sign in to Xentova</h1>
+            <p>Access your portfolio, markets, signals, and trading dashboard.</p>
+          </header>
 
-        <form
-          className="auth-form"
-          onSubmit={handleSubmit}
-        >
-          <label className="auth-field">
-            <span>Email</span>
-            <span className="auth-input">
-              <MailIcon />
+          <TrustBadges compact />
+
+          <form className="auth-form" onSubmit={handleSubmit} noValidate>
+            <AuthInput
+              id="signin-email"
+              label="Email"
+              icon={<MailIcon />}
+              error={errors.email}
+              success={emailReady ? 'Email format looks good.' : ''}
+            >
               <input
+                id="signin-email"
                 type="email"
-                placeholder="Enter your email"
+                placeholder="name@example.com"
                 autoComplete="email"
                 value={form.email}
                 onChange={(event) => updateField('email', event.target.value)}
                 aria-invalid={Boolean(errors.email)}
+                aria-describedby={errors.email ? 'signin-email-error' : undefined}
               />
-            </span>
-            {errors.email ? <em className="form-error">{errors.email}</em> : null}
-          </label>
+            </AuthInput>
 
-          <label className="auth-field">
-            <span>Password</span>
-            <span className="auth-input auth-input--active">
-              <LockIcon />
+            <AuthInput
+              id="signin-password"
+              label="Password"
+              icon={<LockIcon />}
+              error={errors.password}
+              success={passwordReady ? 'Password ready.' : ''}
+            >
               <input
+                id="signin-password"
                 type={showPassword ? 'text' : 'password'}
+                placeholder="Enter your password"
                 value={form.password}
                 onChange={(event) => updateField('password', event.target.value)}
-                aria-label="Password"
                 autoComplete="current-password"
                 aria-invalid={Boolean(errors.password)}
+                aria-describedby={errors.password ? 'signin-password-error' : undefined}
               />
               <button
                 className="icon-button"
@@ -159,56 +143,55 @@ const Signin = () => {
                 aria-pressed={showPassword}
                 onClick={() => setShowPassword((current) => !current)}
               >
-                <EyeIcon />
+                <EyeIcon hidden={!showPassword} />
               </button>
-            </span>
-            {errors.password ? <em className="form-error">{errors.password}</em> : null}
-          </label>
+            </AuthInput>
 
-          {status === 'error' ? (
-            <div className="auth-alert" role="alert">
-              Wrong login details. Try another email or password.
+            <div className="auth-options-row">
+              <label className="remember-row">
+                <input
+                  type="checkbox"
+                  checked={rememberMe}
+                  onChange={(event) => setRememberMe(event.target.checked)}
+                />
+                <span>Remember me</span>
+              </label>
+              <Link className="auth-link" to="/forgot-password">
+                Forgot Password?
+              </Link>
             </div>
-          ) : null}
 
-          <Link className="auth-link auth-forgot" to="/forgot-password">
-            Forgot Password?
-          </Link>
+            {status === 'error' ? (
+              <div className="auth-alert" role="alert">
+                Wrong login details. Try another email or password.
+              </div>
+            ) : null}
 
-          <button className="auth-submit" type="submit" disabled={status === 'loading'}>
-            {status === 'loading' ? 'Signing in...' : 'Sign In'}
-          </button>
-        </form>
+            {status === 'success' ? (
+              <div className="auth-alert auth-alert--success" role="status">
+                Demo sign in accepted. Opening your dashboard.
+              </div>
+            ) : null}
 
-        <div className="auth-divider">
-          <span />
-          <p>Or continue with</p>
-          <span />
+            <button className="auth-submit" type="submit" disabled={status === 'loading'}>
+              {status === 'loading' ? 'Signing in...' : 'Sign In'}
+            </button>
+          </form>
+
+          <SocialAuthButtons onClick={handleSocialLogin} />
+          <DemoNotice>Social login is demo UI until backend integration.</DemoNotice>
+
+          <p className="auth-switch">
+            Don&apos;t have an account? <Link to="/signup">Sign Up</Link>
+          </p>
+
+          <SecurityNote>
+            Protected account access. Backend authentication required for production.
+          </SecurityNote>
         </div>
-
-        <div className="social-row">
-          <button type="button" onClick={handleSocialLogin}>
-            <span className="google-mark">G</span>
-            Google
-          </button>
-          <button type="button" onClick={handleSocialLogin}>
-            <span className="apple-mark">
-              <AppleIcon />
-            </span>
-            Apple
-          </button>
-        </div>
-
-        <p className="auth-switch">
-          Don't have an account?{' '}
-          <Link to="/signup">
-            Sign Up
-          </Link>
-        </p>
-        <p className="auth-footnote">Secure&nbsp;&nbsp;&bull;&nbsp;&nbsp;Transparent&nbsp;&nbsp;&bull;&nbsp;&nbsp;Trusted</p>
-      </div>
+      </main>
     </section>
   )
 }
 
-export default Signin;
+export default Signin
